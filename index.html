@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptLab for Roofers - Automate Your Roofing Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <script src="//use.typekit.net/ik/wHh7g6lBcv8m0tvw2FHYRmnslxI4_aQmD94JpW6VCmIfe8MJXnX1IyvhF2jtFRZLFRyqZcbtjA4RwD4KZ2JhjDJXZRSujhsqe6MKBey8dcs8S1FzdKuDjAoDOA4ySh8RH6GJR5bgIMMjgfMfqMYtUjzYg6.js"
+      async onload="try{Typekit.load();}catch(e){}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <style>
+         /* Body copy */
+  body {
+    font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: polymath, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+      line-height: 1.05;
+  }
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .automation-card {
+            transition: all 0.3s ease;
+        }
+        .automation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .roof-pattern {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 115, 22, 0.03) 35px, rgba(249, 115, 22, 0.03) 70px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-orange-600 p-1.5 rounded-lg">
+                        <img src="favicon.png" class="h-8 w-8" alt="PromptLab Logo">
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">PromptLab<span class="text-orange-600">Roofers</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#automations" class="text-gray-600 hover:text-orange-600 font-medium transition">Automations</a>
+                    <a href="#features" class="text-gray-600 hover:text-orange-600 font-medium transition">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-orange-600 font-medium transition">Testimonials</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="hidden md:block text-gray-600 hover:text-gray-900 font-medium">Sign In</button>
+                    <button class="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold transition shadow-lg shadow-orange-600/20">
+                        Get Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+        <div class="absolute inset-0 roof-pattern"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold border border-orange-200">
+                        <span class="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></span>
+                        Built Exclusively for Roofing Contractors
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Scale Your Roofing Business with <span class="gradient-text">Intelligent Automation</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                        Stop losing leads to competitors who respond faster. Automate your follow-ups, inspections, and customer communications while you focus on what you do best—installing roofs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-xl shadow-orange-600/20 flex items-center justify-center gap-2">
+                            Schedule Free Demo
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <button class="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-orange-600"></i>
+                            See How It Works
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl rotate-3 opacity-20 blur-2xl"></div>
+                    <img 
+                        src="hero.jpg" 
+                        alt="Roofing contractor using tablet" 
+                        class="relative rounded-2xl shadow-2xl border border-gray-100 w-full object-cover"
+                    >
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="bg-green-100 p-2 rounded-lg">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-600">Lead Response Time</span>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-3xl font-bold text-gray-900">3 minutes</span>
+                            <span class="text-sm text-green-600 font-semibold">avg</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">vs. 42 minutes industry average</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="bg-gray-900 py-12 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm font-semibold uppercase tracking-wide mb-8">Trusted by leading roofing companies</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all">
+                <div class="text-center font-bold text-xl text-white">My City Roofing</div>
+                <div class="text-center font-bold text-xl text-white">StormGuard</div>
+                <div class="text-center font-bold text-xl text-white">Summit Roofs</div>
+                <div class="text-center font-bold text-xl text-white">Peak Pro</div>
+                <div class="text-center font-bold text-xl text-white">Shield Roofing</div>
+                <div class="text-center font-bold text-xl text-white">Atlas Contractors</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automations Grid -->
+    <section id="automations" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-orange-600 font-semibold uppercase tracking-wide text-sm mb-3">Powerful Automations</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Built Specifically for Roofing Workflows</h3>
+                <p class="text-xl text-gray-600">These aren't generic templates. Every automation understands the roofing customer journey—from storm damage to final inspection.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Automation 1: Instant Lead Response -->
+                <div class="automation-card bg-white border border-gray-200 rounded-2xl p-8 hover:border-orange-300">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="file-diff" class="w-7 h-7 text-orange-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Change Order Automation</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Eliminate manual email chains and billing errors. AI captures change details, updates MarketSharp and QuickBooks automatically, and creates a review task before notifying the homeowner.</p>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <span>See it in action</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Automation 2: Inspection Scheduling -->
+                <div class="automation-card bg-white border border-gray-200 rounded-2xl p-8 hover:border-orange-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="receipt" class="w-7 h-7 text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Milestone Payment Collection</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Never miss a billing trigger again. Invoices generate automatically when milestones are reached, reminders deploy on schedule, and job status updates the moment payment lands.</p>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <span>See it in action</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Automation 3: Proposal Follow-ups -->
+                <div class="automation-card bg-white border border-gray-200 rounded-2xl p-8 hover:border-orange-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="folder-check" class="w-7 h-7 text-green-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">One-Click Closeout Packages</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Close jobs faster with zero scrambling. When final inspection passes, AI assembles warranties, photos, and documentation into a polished closeout packet — ready to send in one click.</p>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <span>See it in action</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Automation 4: Review Generation -->
+                <div class="automation-card bg-white border border-gray-200 rounded-2xl p-8 hover:border-orange-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="layout-dashboard" class="w-7 h-7 text-purple-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Unified Job Status Dashboard</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Stop checking five systems to answer one question. View production stage, permits, inspections, change orders, AR, and vendor costs in a single real-time dashboard.</p>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <span>See it in action</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Automation 5: Storm Chasing -->
+                <div class="automation-card bg-white border border-gray-200 rounded-2xl p-8 hover:border-orange-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="calculator" class="w-7 h-7 text-red-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Job Costing & Invoice Reconciliation</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Know your true margins in real time. Vendor invoices are parsed, matched to jobs, synced to MarketSharp and QuickBooks, and flagged instantly if costs exceed estimate.</p>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <span>See it in action</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Automation 6: Custom Placeholder -->
+                <div class="automation-card bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-dashed border-orange-500/50 rounded-2xl p-8 relative overflow-hidden group cursor-pointer">
+                    <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BUILD YOUR OWN</div>
+                    <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition">
+                        <i data-lucide="sliders" class="w-7 h-7 text-orange-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Custom Roofing Automation</h4>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Every roofing company is unique. Build bespoke workflows for material ordering, crew dispatch, permit tracking, or whatever your operation needs.</p>
+                    <div class="flex items-center gap-2 text-orange-400 font-semibold text-sm">
+                        <span>Talk to our team</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-orange-600/5 opacity-0 group-hover:opacity-100 transition"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Integrations Bar -->
+<section class="py-12 bg-gray-50 border-y border-gray-200">
+    <div class="container mx-auto px-4">
+        <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">
+            PromptLab integrates with the tools roofers already use.
+        </p>
+
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+
+            <!-- CRM / Production -->
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
+                <span>AccuLynx</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="clipboard-list" class="w-8 h-8"></i>
+                <span>JobNimbus</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="users" class="w-8 h-8"></i>
+                <span>MarketSharp</span>
+            </div>
+
+            <!-- Measurement / Estimating -->
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="ruler" class="w-8 h-8"></i>
+                <span>Roofr</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="map" class="w-8 h-8"></i>
+                <span>EagleView</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="home" class="w-8 h-8"></i>
+                <span>Hover</span>
+            </div>
+
+            <!-- Field Documentation -->
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="camera" class="w-8 h-8"></i>
+                <span>CompanyCam</span>
+            </div>
+
+            <!-- Accounting -->
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="calculator" class="w-8 h-8"></i>
+                <span>QuickBooks</span>
+            </div>
+
+            <!-- Enterprise / Marketing -->
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="building-2" class="w-8 h-8"></i>
+                <span>Salesforce</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+                <i data-lucide="cloud" class="w-8 h-8"></i>
+                <span>HubSpot</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+    <i data-lucide="wrench" class="w-8 h-8"></i>
+    <span>ServiceTitan</span>
+</div>
+
+<div class="flex items-center space-x-2 text-xl font-bold text-gray-700">
+    <i data-lucide="warehouse" class="w-8 h-8"></i>
+    <span>ABC Supply</span>
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Roofers Choose PromptLab</h2>
+                    <p class="text-lg text-gray-600 mb-8">Generic CRMs don't understand roofing. We built this platform alongside top roofing contractors to handle the unique challenges of residential and commercial roofing sales.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="smartphone" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Mobile-First for Field Teams</h4>
+                                <p class="text-gray-600 text-sm">Roofing crews and sales reps get instant notifications via SMS or mobile app while on ladders or at job sites.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="shield" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Insurance Claim Integrations</h4>
+                                <p class="text-gray-600 text-sm">Connect with Xactimate, EagleView, and major insurance carriers to automate claim updates.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="users" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Multi-Location Management</h4>
+                                <p class="text-gray-600 text-sm">Easily manage separate crews across cities or states with territory-based automation rules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="http://static.photos/technology/1024x576/15" alt="Roofing software dashboard" class="rounded-2xl shadow-2xl border border-gray-200">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="font-semibold text-gray-900">Setup Complete</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Average implementation time: <span class="font-bold text-gray-900">48 hours</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+<section class="py-20 bg-orange-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+
+            <div>
+                <div class="text-5xl font-bold mb-2">3–5 Days</div>
+                <div class="text-orange-100 text-sm font-medium">
+                    Faster Permit Turnaround
+                </div>
+            </div>
+
+            <div>
+                <div class="text-5xl font-bold mb-2">0</div>
+                <div class="text-orange-100 text-sm font-medium">
+                    Emails Slipping Through
+                </div>
+            </div>
+
+            <div>
+                <div class="text-5xl font-bold mb-2">2x Faster</div>
+                <div class="text-orange-100 text-sm font-medium">
+                    Change Order Processing
+                </div>
+            </div>
+
+            <div>
+                <div class="text-5xl font-bold mb-2">100%</div>
+                <div class="text-orange-100 text-sm font-medium">
+                    Real-Time Job Visibility
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">Trusted by Roofing Professionals</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"The storm chasing automation alone paid for PromptLab in our first hail season. We were in neighborhoods within 24 hours with personalized outreach."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="http://static.photos/people/200x200/45" alt="Mike" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-gray-900">Mike Rodriguez</div>
+                            <div class="text-sm text-gray-500">Owner, StormGuard Roofing</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"I used to lose sleep worrying about leads. Now the system books inspections while I sleep. Best investment for my roofing business in 10 years."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="http://static.photos/people/200x200/82" alt="Sarah" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-gray-900">Sarah Chen</div>
+                            <div class="text-sm text-gray-500">CEO, Apex Roofing Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"The custom automation for permit tracking saved my admin team 20 hours a week. It's like having an extra employee who never calls in sick."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="http://static.photos/people/200x200/33" alt="James" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-gray-900">James Wilson</div>
+                            <div class="text-sm text-gray-500">Operations Manager, Summit Roofs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="http://static.photos/industry/1200x630/77" alt="Roofing background" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Never Lose Another Roofing Lead?</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join 500+ roofing contractors who are closing more deals with less effort. Get a personalized demo showing how these automations work for your specific business.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition shadow-2xl flex items-center gap-2">
+                    Get Your Free Demo
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <p class="text-gray-400 text-sm">No credit card required • Setup in 48 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-orange-600 p-1.5 rounded-lg">
+                            <img src="favicon.png" class="h-8 w-8" alt="PromptLab Logo">
+                        </div>
+                        <span class="font-bold text-xl text-white">PromptLab<span class="text-orange-600">Roofers</span></span>
+                    </div>
+                    <p class="text-sm">The only automation platform built exclusively for roofing contractors.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-orange-600 transition">Lead Response</a></li>
+                        <li><a href="#" class="hover:text-orange-600 transition">Scheduling</a></li>
+                        <li><a href="#" class="hover:text-orange-600 transition">Reviews</a></li>
+                        <li><a href="#" class="hover:text-orange-600 transition">Storm Tracking</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-orange-600 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-600 transition">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-orange-600 transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            (555) 123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            roofers@promptlab.ai
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">© 2024 PromptLab for Roofers. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll animation for automation cards
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.automation-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
