@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Attribution Discrepancy Calculator — Kuma Agency</title>
+  <link rel="icon" href="https://oharejohnpatrick-creator.github.io/ALL/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7fafc; --card:#ffffff; --muted:#6b7280; --accent:#ff6b35; --brand:#0b4f6c; --glass: rgba(11,79,108,0.06);
+      --radius:12px; --shadow: 0 6px 20px rgba(11,79,108,0.08);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    .wrap{max-width:980px;margin:36px auto;padding:24px}
+    .gate{background:linear-gradient(180deg,#ffffff,var(--glass));padding:28px;border-radius:14px;box-shadow:var(--shadow);text-align:center}
+    .logo{height:56px;margin-bottom:14px}
+    h1{margin:0 0 8px;font-size:22px}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .email-row{display:flex;gap:12px;max-width:640px;margin:0 auto}
+    input[type=email]{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e6edf3;font-size:15px}
+    button.cta{background:var(--accent);color:#fff;border:0;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+    .card{background:var(--card);border-radius:12px;padding:20px;margin-top:20px;box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .inputs .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .field{flex:1}
+    .field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .field input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3;font-size:15px}
+    .outputs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .metric{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:10px;border:1px solid #eef6fb}
+    .metric .k{font-weight:700;font-size:16px}
+    .metric .v{font-size:14px;color:var(--muted);margin-top:6px}
+    .sensitivity{margin-top:14px;overflow:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border:1px solid #eef2f7;text-align:center}
+    .recs{margin-top:14px}
+    .rec{padding:12px;border-radius:10px;background:#fff8f6;border:1px solid #ffe6df;color:#7b2b00;margin-bottom:8px}
+    .formulas{margin-top:14px}
+    .collapse{background:linear-gradient(180deg,#fff,#fbfdff);Padding:12px;border-radius:10px;border:1px solid #eef6fb}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}.outputs{grid-template-columns:1fr}.email-row{flex-direction:column}.logo{height:48px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="gate card" id="gate">
+      <img class="logo" src="https://oharejohnpatrick-creator.github.io/ALL/logo.png" alt="Kuma Agency logo">
+      <h1>Find out why your ad platforms never match Shopify</h1>
+      <p class="lead">Unlock the Attribution Discrepancy Calculator — enter your email for free access.</p>
+      <div class="email-row">
+        <input id="email" type="email" placeholder="Your work email (required)">
+        <button id="unlock" class="cta">Get Free Access</button>
+      </div>
+      <p style="margin-top:10px;color:var(--muted);font-size:13px">No spam. We just email the calculator and a short guide.</p>
+    </div>
+
+    <div id="calculator" style="display:none">
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div>
+            <h2 style="margin:0 0 6px">Attribution Discrepancy Calculator</h2>
+            <p class="lead">Compare platform-reported revenue to Shopify actual revenue and estimate overlap.</p>
+          </div>
+        </div>
+
+        <div class="grid" style="margin-top:16px">
+          <div class="inputs">
+            <div class="row">
+              <div class="field"><label>Google Ads reported revenue ($)</label><input id="google" type="number" value="0" min="0"></div>
+              <div class="field"><label>Meta Ads reported revenue ($)</label><input id="meta" type="number" value="0" min="0"></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>TikTok Ads reported revenue ($)</label><input id="tiktok" type="number" value="0" min="0"></div>
+              <div class="field"><label>Shopify actual revenue ($)</label><input id="shopify" type="number" value="0" min="0"></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Blended gross margin (%)</label><input id="margin" type="number" value="50" min="0" max="100"></div>
+              <div class="field"><label>Monthly ad spend ($)</label><input id="adSpend" type="number" value="1000" min="0"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="outputs">
+              <div class="metric"><div class="k">Total platform-reported</div><div class="v" id="totalReported">$0</div></div>
+              <div class="metric"><div class="k">Shopify actual</div><div class="v" id="shopifyVal">$0</div></div>
+              <div class="metric"><div class="k">Total over-reporting gap</div><div class="v" id="overGap">$0</div></div>
+              <div class="metric"><div class="k">Blended error rate</div><div class="v" id="blendedError">0%</div></div>
+              <div class="metric"><div class="k">True ROAS</div><div class="v" id="trueRoas">0</div></div>
+              <div class="metric"><div class="k">Inflated ROAS</div><div class="v" id="inflatedRoas">0</div></div>
+            </div>
+
+            <div style="margin-top:12px" id="perPlatform"></div>
+          </div>
+        </div>
+
+        <div class="sensitivity card" style="margin-top:16px">
+          <h3 style="margin:0 0 8px">Sensitivity table — Net profit across ad spend & Shopify revenue</h3>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Net profit = (Shopify revenue × gross margin) − Ad spend</div>
+          <div style="overflow:auto">
+            <table id="sensitivityTable">
+              <thead>
+                <tr><th></th><th>Ad Spend −10%</th><th>Ad Spend</th><th>Ad Spend +10%</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>Shopify −10%</th><td id="s11">$0</td><td id="s12">$0</td><td id="s13">$0</td></tr>
+                <tr><th>Shopify</th><td id="s21">$0</td><td id="s22">$0</td><td id="s23">$0</td></tr>
+                <tr><th>Shopify +10%</th><td id="s31">$0</td><td id="s32">$0</td><td id="s33">$0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="recs" id="recs"></div>
+
+        <div class="formulas">
+          <button id="toggleFormulas" class="cta" style="background:var(--brand);margin-top:10px">Show formulas</button>
+          <div id="formulasBox" class="collapse" style="display:none;margin-top:10px">
+            <ul style="margin:0 0 0 16px;padding:0;color:var(--muted)">
+              <li>Total platform-reported = Google + Meta + TikTok</li>
+              <li>Dollar discrepancy = platform reported − Shopify (or allocated Shopify share)</li>
+              <li>Error rate % = ((platform reported − Shopify) / Shopify) × 100</li>
+              <li>Attribution overlap ≈ max(0, (total platform-reported − Shopify) / total platform-reported × 100)</li>
+              <li>True ROAS = Shopify / Ad spend</li>
+              <li>Inflated ROAS = Total platform-reported / Ad spend</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Elements
+    const gate = document.getElementById('gate');
+    const calc = document.getElementById('calculator');
+    const unlock = document.getElementById('unlock');
+    const emailInput = document.getElementById('email');
+
+    unlock.addEventListener('click', ()=>{
+      const email = emailInput.value.trim();
+      if(!email || !email.includes('@')){emailInput.style.borderColor='crimson';emailInput.focus();return}
+      localStorage.setItem('kuma_calculator_email', email);
+      gate.style.display='none';
+      calc.style.display='block';
+    });
+
+    // Auto-unlock if email stored
+    if(localStorage.getItem('kuma_calculator_email')){
+      gate.style.display='none';calc.style.display='block';
+    }
+
+    // Inputs
+    const google = document.getElementById('google');
+    const meta = document.getElementById('meta');
+    const tiktok = document.getElementById('tiktok');
+    const shopify = document.getElementById('shopify');
+    const margin = document.getElementById('margin');
+    const adSpend = document.getElementById('adSpend');
+
+    const totalReportedEl = document.getElementById('totalReported');
+    const shopifyValEl = document.getElementById('shopifyVal');
+    const overGapEl = document.getElementById('overGap');
+    const blendedErrorEl = document.getElementById('blendedError');
+    const trueRoasEl = document.getElementById('trueRoas');
+    const inflatedRoasEl = document.getElementById('inflatedRoas');
+    const perPlatformEl = document.getElementById('perPlatform');
+    const recsEl = document.getElementById('recs');
+
+    function fmt(n){return '$'+Number(n||0).toLocaleString(undefined,{maximumFractionDigits:0})}
+    function pct(n){return (Number(n)||0).toFixed(1)+'%'}
+
+    function compute(){
+      const g = Number(google.value)||0;
+      const m = Number(meta.value)||0;
+      const t = Number(tiktok.value)||0;
+      const s = Number(shopify.value)||0;
+      const gr = Math.max(0,Math.min(100,Number(margin.value)||0))/100;
+      const a = Number(adSpend.value)||0;
+
+      const totalReported = g + m + t;
+      totalReportedEl.textContent = fmt(totalReported);
+      shopifyValEl.textContent = fmt(s);
+
+      const overGap = Math.max(0,totalReported - s);
+      overGapEl.textContent = fmt(overGap);
+
+      const blendedError = s>0? (totalReported - s)/s*100 : 0;
+      blendedErrorEl.textContent = blendedError? pct(blendedError): '0%';
+
+      const trueRoas = a>0? (s / a) : 0;
+      const inflatedRoas = a>0? (totalReported / a) : 0;
+      trueRoasEl.textContent = trueRoas? Number(trueRoas).toFixed(2): '0';
+      inflatedRoasEl.textContent = inflatedRoas? Number(inflatedRoas).toFixed(2): '0';
+
+      // Per-platform breakdown
+      const overlapPct = totalReported>0? Math.max(0,(totalReported - s)/totalReported*100):0;
+      const platforms = [
+        {name:'Google', val:g},
+        {name:'Meta', val:m},
+        {name:'TikTok', val:t}
+      ];
+
+      let html = '<h4 style="margin:10px 0 6px">Per-platform breakdown</h4>';
+      html += '<div style="display:grid;grid-template-columns:repeat(1,1fr);gap:8px">';
+      platforms.forEach(p=>{
+        const reported = p.val;
+        const errorRate = s>0? (reported - s)/s*100 : 0; // as user specified formula
+        const platformOverlap = totalReported>0? overlapPct * (reported/totalReported) : 0;
+        html += `<div style="padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef6fb">`;
+        html += `<div style="font-weight:700">${p.name}</div>`;
+        html += `<div style="color:var(--muted);font-size:13px;margin-top:6px">Reported: ${fmt(reported)} — Error vs Shopify: ${Number(errorRate).toFixed(1)}%</div>`;
+        html += `<div style="color:var(--muted);font-size:13px">Attribution overlap est.: ${Number(platformOverlap).toFixed(1)}%</div>`;
+        html += `</div>`;
+      });
+      html += '</div>';
+      perPlatformEl.innerHTML = html;
+
+      // Sensitivity table
+      const adVariants = [a*0.9, a, a*1.1];
+      const shopVariants = [s*0.9, s, s*1.1];
+      const ids = ['s11','s12','s13','s21','s22','s23','s31','s32','s33'];
+      let idx=0;
+      for(let r=0;r<3;r++){
+        for(let c=0;c<3;c++){
+          const net = (shopVariants[r]*gr) - adVariants[c];
+          document.getElementById(ids[idx]).textContent = fmt(net);
+          idx++;
+        }
+      }
+
+      // Recommendations
+      recsEl.innerHTML = '';
+      if(Math.abs(blendedError) > 30){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'Your platforms are significantly over-reporting. You may be scaling losing campaigns. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
+        recsEl.appendChild(d);
+      }
+      if(trueRoas < 1.5){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'Your ads are likely unprofitable at current spend. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
+        recsEl.appendChild(d);
+      }
+      if(overGap > 5000){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'You have a serious attribution problem — book a free audit. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
+        recsEl.appendChild(d);
+      }
+    }
+
+    [google,meta,tiktok,shopify,margin,adSpend].forEach(el=>el.addEventListener('input', compute));
+    compute();
+
+    // Formulas toggle
+    const toggle = document.getElementById('toggleFormulas');
+    const box = document.getElementById('formulasBox');
+    toggle.addEventListener('click', ()=>{box.style.display = box.style.display==='none'?'block':'none';toggle.textContent = box.style.display==='none'?'Show formulas':'Hide formulas'});
+  </script>
+</body>
+</html>
