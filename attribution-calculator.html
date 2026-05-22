@@ -7,185 +7,127 @@
   <link rel="icon" href="https://oharejohnpatrick-creator.github.io/ALL/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #09101a;
-      --surface: #ffffff;
-      --surface-soft: #f8fafc;
-      --surface-muted: #eef2ff;
-      --text: #0f172a;
-      --text-strong: #0f172a;
-      --muted: #64748b;
-      --accent: #2563eb;
-      --accent-strong: #1d4ed8;
-      --success: #16a34a;
-      --danger: #dc2626;
-      --google: #1a73e8;
-      --meta: #8b5cf6;
-      --tiktok: #ec4899;
-      --shadow: 0 28px 80px rgba(15, 23, 42, 0.25);
-      --radius: 32px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
-    * {box-sizing: border-box;}
-    html, body {height:100%;margin:0;background:radial-gradient(circle at top, rgba(59,130,246,0.16), transparent 28%), radial-gradient(circle at bottom right, rgba(99,102,241,0.15), transparent 20%), #09101a; color: #111827;}
-    body {padding: 0 16px;}
-    .wrap {max-width: 1000px; margin: 0 auto; padding: 48px 0 80px;}
-    .hero-shell {padding: 40px 20px 32px; border-radius: 40px; background: rgba(15, 23, 42, 0.95); box-shadow: var(--shadow); border: 1px solid rgba(148, 163, 184, 0.16); backdrop-filter: blur(18px);}
-    .hero-card {background: #ffffff; border-radius: 32px; padding: 40px 36px 32px; max-width: 780px; margin: 0 auto; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);}
-    .brand-top {display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px;}
-    .brand-icon {width: 56px; height: 56px; border-radius: 18px; background: #e2e8f0; display: grid; place-items: center;}
-    .brand-icon img {width: 36px; height: 36px;}
-    .badge {display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2563eb; background: rgba(37, 99, 235, 0.12); border-radius: 999px; padding: 10px 16px;}
-    .hero-title {margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.02; letter-spacing: -0.05em; color: #0f172a; text-align: center;}
-    .hero-subhead {margin: 18px auto 28px; max-width: 640px; color: #475569; font-size: 1rem; line-height: 1.7; text-align: center;}
-    .feature-list {display: grid; gap: 12px; margin: 0 auto 28px; max-width: 640px;}
-    .feature-item {display: flex; align-items: flex-start; gap: 12px; color: #475569; font-size: 0.95rem;}
-    .feature-icon {min-width: 34px; min-height: 34px; border-radius: 12px; background: rgba(37, 99, 235, 0.08); color: #2563eb; display: grid; place-items: center; font-size: 16px;}
-    .email-card {margin-top: 12px; padding: 24px; border-radius: 24px; background: #f8fafc; border: 1px solid #e2e8f0;}
-    .email-card .form-row {display: grid; gap: 14px;}
-    .email-card input {width: 100%; padding: 16px 18px; border-radius: 18px; border: 1px solid #dbeafe; background: #ffffff; color: #0f172a; font-size: 0.98rem;}
-    .email-card input::placeholder {color: #94a3b8;}
-    .email-card button {width: 100%; margin-top: 6px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: 0; padding: 16px 20px; border-radius: 18px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 16px 32px rgba(37, 99, 235, 0.18);}
-    .email-note {margin-top: 16px; color: #64748b; font-size: 0.9rem; text-align: center;}
-    .calculator-shell {margin-top: 36px;}
-    .calculator-card {background: #ffffff; border-radius: 32px; padding: 32px; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);}
-    .section-header {display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;}
-    .section-header h2 {margin: 0; font-size: 1.75rem; color: #0f172a;}
-    .section-header p {margin: 8px 0 0; color: #64748b; font-size: 0.98rem; max-width: 640px;}
+    :root{ --bg:#071226; --muted:#94a3b8; --accent:#2563eb; --success:#16a34a; --danger:#dc2626; --google:#1a73e8; --meta:#7c3aed; --tiktok:#111827; --pinterest:#ef4444; --microsoft:#0ea5a4; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#06111b 0%, #071226 100%);color:#0f172a}
+    .wrap{max-width:1024px;margin:28px auto;padding:24px}
+    /* Hero / Email gate */
+    .hero {background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:28px;padding:28px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 24px 60px rgba(2,6,23,0.6);}
+    .hero-inner{background:#0b1220;border-radius:20px;padding:28px;color:#e6eef8}
+    .brand-row{display:flex;align-items:center;gap:12px;justify-content:center}
+    .brand-row img{height:52px}
+    .badge{background:rgba(37,99,235,0.12);color:var(--accent);padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;margin-left:8px}
+    .hero h1{margin:16px 0 6px;text-align:center;font-size:26px;color:#f8fafc}
+    .hero p.lead{margin:0 0 18px;text-align:center;color:var(--muted)}
+    .email-card{max-width:720px;margin:0 auto;background:#071826;padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .email-row{display:flex;gap:12px;margin-top:8px}
+    .email-row input{flex:1;padding:14px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#f8fafc}
+    .email-row button{background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;border:0;padding:12px 18px;border-radius:10px;cursor:pointer;font-weight:700}
+    .email-error{color:var(--danger);font-size:13px;margin-top:8px;text-align:center}
 
-    .input-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 22px;}
-    .field {display: grid; gap: 10px;}
-    .field label {font-size: 0.85rem; color: #475569; font-weight: 600;}
-    .field input {width: 100%; border: 1px solid #e2e8f0; background: #f8fafc; border-radius: 18px; padding: 16px 18px; font-size: 1rem; color: #0f172a;}
-    .field input:focus {outline: 2px solid rgba(37, 99, 235, 0.24); border-color: #bfdbfe;}
-    .summary-grid {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 20px;}
-    .summary-card {border-radius: 24px; padding: 24px; color: #ffffff; min-height: 128px; display: flex; flex-direction: column; justify-content: space-between;}
-    .summary-card strong {display: block; font-size: 1rem; color: rgba(255,255,255,.8); margin-bottom: 14px;}
-    .summary-card .value {font-size: 2.3rem; line-height: 1; font-weight: 800;}
-    .summary-card.total {background: linear-gradient(135deg, #1d4ed8, #2563eb);}
-    .summary-card.shopify {background: linear-gradient(135deg, #7c3aed, #8b5cf6);}
-    .summary-card.gap {background: linear-gradient(135deg, #dc2626, #ef4444);}
-    .summary-card.error {background: linear-gradient(135deg, #0f766e, #14b8a6);}
-    .summary-card.true {background: linear-gradient(135deg, #16a34a, #22c55e);}
-    .summary-card.inflated {background: linear-gradient(135deg, #0ea5e9, #38bdf8);}
-    .summary-card .status {font-size: 0.92rem; opacity: 0.88; margin-top: 10px; color: rgba(255,255,255,0.9);}
-    .platform-grid {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px;}
-    .platform-card {border-radius: 24px; padding: 22px; background: #f8fafc; border: 1px solid #e2e8f0; min-height: 138px;}
-    .platform-card .platform-pill {display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 700; margin-bottom: 16px;}
-    .platform-icon {width: 34px; height: 34px; display: grid; place-items: center; border-radius: 14px; color: #ffffff; font-weight: 700;}
-    .platform-card.google .platform-icon {background: rgba(26, 115, 232, 0.16); color: var(--google);}
-    .platform-card.meta .platform-icon {background: rgba(139, 92, 246, 0.16); color: var(--meta);}
-    .platform-card.tiktok .platform-icon {background: rgba(236, 72, 153, 0.16); color: var(--tiktok);}
-    .platform-card .platform-value {font-size: 1.85rem; font-weight: 800; margin-bottom: 10px; color: #0f172a;}
-    .platform-card .platform-detail {font-size: 0.95rem; color: #475569; line-height: 1.6;}
-    .platform-card .platform-detail span {display: block; margin-top: 8px;}
+    /* Calculator */
+    .calculator{display:none;margin-top:20px}
+    .calc-card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 20px 60px rgba(2,6,23,0.12)}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .section-head h2{margin:0;font-size:20px;color:#0f172a}
+    .platform-select{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .platform-toggle{display:flex;align-items:center;gap:8px;background:#f8fafc;padding:8px 12px;border-radius:10px;border:1px solid #e6edf3}
 
-    .divider {height: 1px; background: #e2e8f0; border: none; margin: 32px 0;}
-    .sensitivity-card {border-radius: 24px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; margin-top: 16px;}
-    .sensitivity-card h3 {margin: 0 0 10px; font-size: 1.2rem; color: #0f172a;}
-    .sensitivity-card p {margin: 0 0 18px; color: #64748b; font-size: 0.95rem;}
-    .sensitivity-table {width: 100%; border-collapse: collapse; font-size: 0.92rem;}
-    .sensitivity-table th, .sensitivity-table td {padding: 14px 12px; border: 1px solid #e2e8f0;}
-    .sensitivity-table th {background: #f1f5f9; color: #475569; text-align: left;}
-    .sensitivity-table td {color: #0f172a;}
-    .recs {margin-top: 20px; display: grid; gap: 12px;}
-    .rec {padding: 18px 20px; border-radius: 22px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a;}
-    .rec a {color: var(--accent); font-weight: 700;}
-    .formulas {margin-top: 24px;}
-    .formulas button {background: #0f172a; color: #ffffff; border: 0; padding: 14px 18px; border-radius: 18px; font-size: 0.98rem; font-weight: 700; cursor: pointer;}
-    .collapse {background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 20px; margin-top: 16px;}
-    .collapse ul {margin: 0; padding-left: 18px; color: #475569;}
-    .collapse li {margin-bottom: 10px;}
-    .status-good {color: var(--success);}
-    .status-bad {color: var(--danger);}
-    @media (max-width: 900px) {.input-grid, .summary-grid, .platform-grid {grid-template-columns: 1fr;} .hero-card {padding: 32px 24px 24px;} }
-    @media (max-width: 640px) {.wrap {padding: 24px 0 60px;} .hero-shell {padding: 28px 16px 24px;} .hero-title {font-size: 2rem;} .email-card {padding: 20px;} .field input {padding: 14px 16px;}.summary-card {min-height: 120px;}.platform-card {padding: 18px;}}
+    .inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .input-pair{background:#fbfdff;padding:12px;border-radius:10px;border:1px solid #eef6fb}
+    .input-pair label{display:block;font-size:13px;color:#475569;margin-bottom:6px}
+    .input-pair input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3}
+    .helper{font-size:12px;color:#64748b;margin-top:6px}
+
+    .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .summary-card{background:linear-gradient(135deg,#eef2ff,#ffffff);padding:14px;border-radius:12px;min-height:96px}
+    .summary-card .label{font-size:13px;color:#475569}
+    .summary-card .value{font-size:20px;font-weight:800;margin-top:8px}
+    .summary-card.green{background:linear-gradient(135deg,#ecfdf5,#dcfce7)}
+    .summary-card.red{background:linear-gradient(135deg,#fff1f2,#fee2e2)}
+
+    .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .platform-card{background:#fff;border-radius:12px;padding:12px;border:1px solid #eef2f7}
+    .platform-pill{display:flex;align-items:center;gap:8px;font-weight:700;margin-bottom:8px}
+    .platform-icon{width:34px;height:34px;border-radius:8px;color:#fff;display:grid;place-items:center;font-weight:800}
+    .bar-wrap{height:10px;background:#f1f5f9;border-radius:8px;overflow:hidden;margin-top:10px}
+    .bar-rep{height:100%;background:linear-gradient(90deg,#2563eb,#1d4ed8);float:left}
+    .bar-shop{height:100%;background:#94a3b8;float:left}
+
+    .recs{margin-top:18px}
+    .rec{background:#fffbf0;border-radius:10px;padding:12px;border:1px solid #fce7d6}
+
+    .formulas{margin-top:18px}
+    .formulas button{background:#0f172a;color:#fff;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
+    .collapse{background:#fff;padding:12px;border-radius:10px;border:1px solid #eef2f7;margin-top:8px}
+
+    @media(max-width:900px){.summary{grid-template-columns:repeat(2,1fr)}.platform-grid{grid-template-columns:repeat(2,1fr)}.inputs{grid-template-columns:1fr}}
+    @media(max-width:520px){.summary{grid-template-columns:1fr}.platform-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="hero-shell">
-      <div class="hero-card" id="gate">
-        <div class="brand-top">
-          <div class="brand-icon"><img src="https://oharejohnpatrick-creator.github.io/ALL/logo.png" alt="Kuma Agency logo"></div>
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="brand-row">
+          <img src="https://oharejohnpatrick-creator.github.io/ALL/logo.png" alt="Kuma Agency">
           <span class="badge">FREE TOOL</span>
         </div>
-        <h1 class="hero-title">Know if Your Paid Ads Are Actually Profitable</h1>
-        <p class="hero-subhead">Enter your email for instant access to our free Attribution Discrepancy Calculator — used by ecommerce brands to find their real numbers.</p>
-        <div class="feature-list">
-          <div class="feature-item"><span class="feature-icon">$</span>Real-time revenue discrepancy and ROAS calculation</div>
-          <div class="feature-item"><span class="feature-icon">↺</span>See where Shopify and platform revenue diverge</div>
-          <div class="feature-item"><span class="feature-icon">▣</span>Sensitivity table for spend and Shopify variance</div>
-        </div>
+        <h1>Find out which ad platforms are lying to you</h1>
+        <p class="lead">Enter your email to access the free Attribution Discrepancy Calculator — used by ecommerce brands to find their real numbers.</p>
 
         <div class="email-card">
-          <div class="form-row"><input id="email" type="email" placeholder="Your work email (required)"></div>
-          <button id="unlock">Get Free Access</button>
-          <p class="email-note">No spam, ever. We will also send you tips on scaling paid ads profitably.</p>
+          <form id="subscribeForm">
+            <div class="email-row">
+              <input id="email" type="email" placeholder="Enter your work email" required>
+              <button id="subscribeBtn" type="submit">Get Free Access</button>
+            </div>
+            <div id="emailMessage" class="email-error" style="display:none"></div>
+          </form>
         </div>
       </div>
     </div>
 
-    <div id="calculator" class="calculator-shell" style="display:none">
-      <div class="calculator-card">
-        <div class="section-header">
-          <div>
-            <h2>Attribution Discrepancy Calculator</h2>
-            <p>Compare platform-reported revenue to Shopify actual revenue and estimate overlap in real time.</p>
+    <div id="calculator" class="calculator">
+      <div class="calc-card">
+        <div class="section-head">
+          <h2>Attribution Discrepancy Calculator</h2>
+        </div>
+
+        <div style="margin-top:12px">
+          <div style="font-weight:700;margin-bottom:8px">Which platforms are you running ads on?</div>
+          <div class="platform-select" id="platformSelect">
+            <label class="platform-toggle"><input type="checkbox" data-key="google" checked> Google Ads</label>
+            <label class="platform-toggle"><input type="checkbox" data-key="meta" checked> Meta Ads</label>
+            <label class="platform-toggle"><input type="checkbox" data-key="tiktok" checked> TikTok Ads</label>
+            <label class="platform-toggle"><input type="checkbox" data-key="pinterest"> Pinterest Ads</label>
+            <label class="platform-toggle"><input type="checkbox" data-key="microsoft"> Microsoft / Bing Ads</label>
           </div>
         </div>
 
-        <div class="input-grid">
-          <div class="field"><label>Google Ads reported revenue ($)</label><input id="google" type="number" value="0" min="0"></div>
-          <div class="field"><label>Meta Ads reported revenue ($)</label><input id="meta" type="number" value="0" min="0"></div>
-          <div class="field"><label>TikTok Ads reported revenue ($)</label><input id="tiktok" type="number" value="0" min="0"></div>
-          <div class="field"><label>Shopify actual revenue ($)</label><input id="shopify" type="number" value="0" min="0"></div>
-          <div class="field"><label>Blended gross margin (%)</label><input id="margin" type="number" value="50" min="0" max="100"></div>
-          <div class="field"><label>Monthly ad spend ($)</label><input id="adSpend" type="number" value="1000" min="0"></div>
+        <div class="inputs" id="inputsContainer"></div>
+
+        <div class="summary" id="summaryCards">
+          <div class="summary-card" id="cardTotal"><div class="label">Total platform-reported</div><div class="value" id="totalReported">$0</div></div>
+          <div class="summary-card" id="cardShopify"><div class="label">Total Shopify-attributed</div><div class="value" id="totalShopify">$0</div></div>
+          <div class="summary-card" id="cardGap"><div class="label">Total discrepancy</div><div class="value" id="totalGap">$0</div></div>
+          <div class="summary-card" id="cardBlended"><div class="label">Blended error rate</div><div class="value" id="blendedError">0%</div></div>
         </div>
 
-        <div class="summary-grid">
-          <div class="summary-card total"><strong>Total platform reported</strong><div class="value" id="totalReported">$0</div><div class="status" id="statusTotal">Platform revenue</div></div>
-          <div class="summary-card shopify"><strong>Shopify actual</strong><div class="value" id="shopifyVal">$0</div><div class="status">True revenue</div></div>
-          <div class="summary-card gap"><strong>Over-reporting gap</strong><div class="value" id="overGap">$0</div><div class="status" id="statusGap">Attribution difference</div></div>
-          <div class="summary-card error"><strong>Blended error rate</strong><div class="value" id="blendedError">0%</div><div class="status" id="statusError">Error vs Shopify</div></div>
-          <div class="summary-card true"><strong>True ROAS</strong><div class="value" id="trueRoas">0</div><div class="status" id="statusTrue">Based on Shopify revenue</div></div>
-          <div class="summary-card inflated"><strong>Inflated ROAS</strong><div class="value" id="inflatedRoas">0</div><div class="status" id="statusInflated">Based on platform revenue</div></div>
-        </div>
+        <div class="platform-grid" id="platformGrid"></div>
 
-        <div class="platform-grid" id="perPlatform"></div>
-
-        <hr class="divider">
-
-        <div class="sensitivity-card">
-          <h3>Sensitivity Analysis — Net profit if revenue or spend shifts</h3>
-          <p>Net profit = (Shopify revenue × gross margin) − ad spend</p>
-          <div style="overflow:auto">
-            <table class="sensitivity-table" id="sensitivityTable">
-              <thead>
-                <tr><th></th><th>Ad Spend −10%</th><th>Ad Spend</th><th>Ad Spend +10%</th></tr>
-              </thead>
-              <tbody>
-                <tr><th>Shopify −10%</th><td id="s11">$0</td><td id="s12">$0</td><td id="s13">$0</td></tr>
-                <tr><th>Shopify</th><td id="s21">$0</td><td id="s22">$0</td><td id="s23">$0</td></tr>
-                <tr><th>Shopify +10%</th><td id="s31">$0</td><td id="s32">$0</td><td id="s33">$0</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <hr style="border:none;border-top:1px solid #eef2f7;margin:18px 0">
 
         <div class="recs" id="recs"></div>
 
         <div class="formulas">
           <button id="toggleFormulas">Show formulas</button>
-          <div id="formulasBox" class="collapse" style="display:none;">
+          <div id="formulasBox" class="collapse" style="display:none">
             <ul>
-              <li>Total platform-reported = Google + Meta + TikTok</li>
-              <li>Dollar discrepancy = platform reported − Shopify (or allocated Shopify share)</li>
-              <li>Error rate % = ((platform reported − Shopify) / Shopify) × 100</li>
-              <li>Attribution overlap ≈ max(0, (total platform-reported − Shopify) / total platform-reported × 100)</li>
-              <li>True ROAS = Shopify / Ad spend</li>
-              <li>Inflated ROAS = Total platform-reported / Ad spend</li>
+              <li>Dollar discrepancy = Platform reported − Shopify attributed</li>
+              <li>Error rate % = ((Platform reported − Shopify attributed) / Shopify attributed) × 100</li>
+              <li>Blended error rate = ((Σ platform reported − Σ Shopify attributed) / Σ Shopify attributed) × 100</li>
+              <li>Matched = error rate between -3% and 3%</li>
             </ul>
           </div>
         </div>
@@ -194,131 +136,186 @@
   </div>
 
   <script>
+    // Data model for platforms
+    const PLATFORMS = {
+      google: {label: 'Google', color: '--google'},
+      meta: {label: 'Meta', color: '--meta'},
+      tiktok: {label: 'TikTok', color: '--tiktok'},
+      pinterest: {label: 'Pinterest', color: '--pinterest'},
+      microsoft: {label: 'Microsoft', color: '--microsoft'}
+    };
+
     // Elements
-    const gate = document.getElementById('gate');
-    const calc = document.getElementById('calculator');
-    const unlock = document.getElementById('unlock');
+    const subscribeForm = document.getElementById('subscribeForm');
+    const subscribeBtn = document.getElementById('subscribeBtn');
     const emailInput = document.getElementById('email');
-
-    unlock.addEventListener('click', ()=>{
-      const email = emailInput.value.trim();
-      if(!email || !email.includes('@')){emailInput.style.borderColor='crimson';emailInput.focus();return}
-      localStorage.setItem('kuma_calculator_email', email);
-      gate.style.display='none';
-      calc.style.display='block';
-    });
-
-    // Auto-unlock if email stored
-    if(localStorage.getItem('kuma_calculator_email')){
-      gate.style.display='none';calc.style.display='block';
-    }
-
-    // Inputs
-    const google = document.getElementById('google');
-    const meta = document.getElementById('meta');
-    const tiktok = document.getElementById('tiktok');
-    const shopify = document.getElementById('shopify');
-    const margin = document.getElementById('margin');
-    const adSpend = document.getElementById('adSpend');
+    const emailMessage = document.getElementById('emailMessage');
+    const calculator = document.getElementById('calculator');
+    const inputsContainer = document.getElementById('inputsContainer');
+    const platformGrid = document.getElementById('platformGrid');
+    const platformSelect = document.getElementById('platformSelect');
 
     const totalReportedEl = document.getElementById('totalReported');
-    const shopifyValEl = document.getElementById('shopifyVal');
-    const overGapEl = document.getElementById('overGap');
+    const totalShopifyEl = document.getElementById('totalShopify');
+    const totalGapEl = document.getElementById('totalGap');
     const blendedErrorEl = document.getElementById('blendedError');
-    const trueRoasEl = document.getElementById('trueRoas');
-    const inflatedRoasEl = document.getElementById('inflatedRoas');
-    const perPlatformEl = document.getElementById('perPlatform');
-    const recsEl = document.getElementById('recs');
 
-    function fmt(n){ return '$'+Number(n||0).toLocaleString(undefined,{maximumFractionDigits:0}); }
-    function pct(n){ return (Number(n)||0).toFixed(1)+'%'; }
+    let activePlatforms = ['google','meta','tiktok'];
 
-    function compute(){
-      const g = Number(google.value)||0;
-      const m = Number(meta.value)||0;
-      const t = Number(tiktok.value)||0;
-      const s = Number(shopify.value)||0;
-      const gr = Math.max(0, Math.min(100, Number(margin.value)||0))/100;
-      const a = Number(adSpend.value)||0;
+    // Helper formatters
+    function fmt(n){return '$'+Number(n||0).toLocaleString();}
+    function pct(n){return (Number(n)||0).toFixed(1)+'%';}
 
-      const totalReported = g + m + t;
-      totalReportedEl.textContent = fmt(totalReported);
-      shopifyValEl.textContent = fmt(s);
-
-      const overGap = Math.max(0, totalReported - s);
-      overGapEl.textContent = fmt(overGap);
-
-      const blendedError = s > 0 ? (totalReported - s) / s * 100 : 0;
-      blendedErrorEl.textContent = blendedError ? pct(blendedError) : '0%';
-      blendedErrorEl.className = blendedError > 30 ? 'status-bad' : blendedError > 10 ? 'status-good' : '';
-      document.getElementById('statusError').textContent = blendedError > 30 ? 'High attribution error' : blendedError > 10 ? 'Moderate error' : 'Healthy attribution';
-
-      const trueRoas = a > 0 ? (s / a) : 0;
-      const inflatedRoas = a > 0 ? (totalReported / a) : 0;
-      trueRoasEl.textContent = trueRoas ? Number(trueRoas).toFixed(2) : '0';
-      inflatedRoasEl.textContent = inflatedRoas ? Number(inflatedRoas).toFixed(2) : '0';
-      trueRoasEl.className = trueRoas < 1.5 ? 'status-bad' : 'status-good';
-      inflatedRoasEl.className = inflatedRoas < 1.5 ? 'status-bad' : 'status-good';
-      document.getElementById('statusTrue').textContent = trueRoas < 1.5 ? 'Below profitable ROAS' : 'Healthy ROAS';
-      document.getElementById('statusInflated').textContent = inflatedRoas > trueRoas ? 'Inflated platform numbers' : 'Platform ROI';
-
-      const overlapPct = totalReported > 0 ? Math.max(0, (totalReported - s) / totalReported * 100) : 0;
-      const platforms = [
-        {name:'Google', val:g, icon:'G', cls:'google'},
-        {name:'Meta', val:m, icon:'M', cls:'meta'},
-        {name:'TikTok', val:t, icon:'T', cls:'tiktok'}
-      ];
-
-      let html = '';
-      platforms.forEach(p => {
-        const reported = p.val;
-        const errorRate = s > 0 ? (reported - s) / s * 100 : 0;
-        const platformOverlap = totalReported > 0 ? overlapPct * (reported / totalReported) : 0;
-        const errorText = errorRate > 30 ? 'High' : errorRate > 10 ? 'Moderate' : 'Healthy';
-        const errorClass = errorRate > 30 ? 'status-bad' : 'status-good';
-
-        html += `<div class="platform-card ${p.cls}">`;
-        html += `<div class="platform-pill"><span class="platform-icon">${p.icon}</span>${p.name}</div>`;
-        html += `<div class="platform-value">${fmt(reported)}</div>`;
-        html += `<div class="platform-detail"><span>Gap vs Shopify: ${fmt(reported - s)}</span><span>Error rate: ${Number(errorRate).toFixed(1)}% <strong class="${errorClass}">${errorText}</strong></span><span>Overlap est.: ${Number(platformOverlap).toFixed(1)}%</span></div>`;
-        html += `</div>`;
+    // Build inputs for active platforms
+    function renderInputs(){
+      inputsContainer.innerHTML = '';
+      activePlatforms.forEach(key=>{
+        const p = PLATFORMS[key];
+        const el = document.createElement('div'); el.className='input-pair';
+        el.innerHTML = `
+          <label>${p.label} reported revenue ($)</label>
+          <input type="number" class="reported" data-key="${key}" value="0" min="0">
+          <label style="margin-top:10px">${p.label} Shopify-attributed revenue ($)</label>
+          <input type="number" class="shopified" data-key="${key}" value="0" min="0">
+          <div class="helper">Find this in Shopify → Analytics → Sales by traffic source</div>
+        `;
+        inputsContainer.appendChild(el);
       });
-      perPlatformEl.innerHTML = html;
+      // attach listeners
+      document.querySelectorAll('.reported, .shopified').forEach(i=>i.addEventListener('input', compute));
+    }
 
-      const adVariants = [a * 0.9, a, a * 1.1];
-      const shopVariants = [s * 0.9, s, s * 1.1];
-      const ids = ['s11','s12','s13','s21','s22','s23','s31','s32','s33'];
-      let idx = 0;
-      for(let r = 0; r < 3; r++){
-        for(let c = 0; c < 3; c++){
-          const net = (shopVariants[r] * gr) - adVariants[c];
-          document.getElementById(ids[idx]).textContent = fmt(net);
-          idx++;
+    // Render platform cards
+    function renderPlatformCards(stats){
+      platformGrid.innerHTML = '';
+      activePlatforms.forEach(key=>{
+        const s = stats[key] || {reported:0, shop:0, gap:0, error:0};
+        const colVar = PLATFORMS[key].color;
+        const color = getComputedStyle(document.documentElement).getPropertyValue(colVar) || '';
+        const card = document.createElement('div'); card.className='platform-card '+key;
+        card.innerHTML = `
+          <div class="platform-pill"><div class="platform-icon" style="background:${color};">${PLATFORMS[key].label.charAt(0)}</div>${PLATFORMS[key].label}</div>
+          <div style="font-weight:800;font-size:18px">${fmt(s.reported)}</div>
+          <div style="color:#64748b">Shopify attributed: ${fmt(s.shop)}</div>
+          <div style="margin-top:8px">Discrepancy: <strong class="gap-val">${fmt(s.gap)}</strong></div>
+          <div style="margin-top:6px">Error: <strong class="err-val">${pct(s.error)}</strong> <span style="color:#64748b">${s.label}</span></div>
+          <div class="bar-wrap"><div class="bar-rep" style="width:${s.repPct}%"></div><div class="bar-shop" style="width:${s.shopPct}%"></div></div>
+        `;
+        platformGrid.appendChild(card);
+      });
+    }
+
+    // Compute stats and update UI
+    function compute(){
+      const stats = {};
+      let totalReported=0, totalShop=0;
+      activePlatforms.forEach(key=>{
+        const rep = Number(document.querySelector(`.reported[data-key="${key}"]`).value)||0;
+        const shop = Number(document.querySelector(`.shopified[data-key="${key}"]`).value)||0;
+        const gap = rep - shop;
+        const error = shop!==0? (gap / shop)*100 : 0;
+        let label = 'Matched';
+        if(error > 3) label='Over-reporting';
+        if(error < -3) label='Under-reporting';
+        stats[key]={reported:rep, shop:shop, gap:gap, error:error, label:label};
+        totalReported += rep; totalShop += shop;
+      });
+
+      const totalGap = totalReported - totalShop;
+      const blendedError = totalShop!==0? (totalGap / totalShop)*100 : 0;
+
+      // Update summary
+      totalReportedEl.textContent = fmt(totalReported);
+      totalShopifyEl.textContent = fmt(totalShop);
+      totalGapEl.textContent = fmt(totalGap);
+      blendedErrorEl.textContent = pct(blendedError);
+
+      // Update blended label coloring
+      const blendedCard = document.getElementById('cardBlended');
+      blendedCard.classList.remove('green','red');
+      if(blendedError > 3) blendedCard.classList.add('red');
+      else if(blendedError < -3) blendedCard.classList.add('green');
+
+      // Determine per-platform pct for bar visualization
+      activePlatforms.forEach(key=>{
+        const s = stats[key];
+        const maxv = Math.max(1, s.reported, s.shop);
+        s.repPct = Math.min(100, Math.round((s.reported / maxv) * 100));
+        s.shopPct = Math.min(100, Math.round((s.shop / maxv) * 100));
+        // color gap value
+        if(s.error > 3) s.gapClass='over'; else if(s.error < -3) s.gapClass='under'; else s.gapClass='matched';
+      });
+
+      // Update platform cards
+      renderPlatformCards(stats);
+
+      // Recommendations
+      updateRecommendations(stats, blendedError, totalGap);
+    }
+
+    function updateRecommendations(stats, blendedError, totalGap){
+      const recs = document.getElementById('recs'); recs.innerHTML='';
+      let anyHigh=false;
+      Object.keys(stats).forEach(k=>{
+        const s = stats[k];
+        if(s.error > 50){
+          const d = document.createElement('div'); d.className='rec'; d.innerHTML = `${PLATFORMS[k].label} is over-reporting by more than 50%. You may be scaling a losing campaign. <a href="https://kuma-agency.moxieapp.com/public/discovery-call">Book a Free Audit →</a>`; recs.appendChild(d); anyHigh=true;
+        } else if(s.error > 3){
+          const d = document.createElement('div'); d.className='rec'; d.innerHTML = `${PLATFORMS[k].label} is over-reporting. You may be making spend decisions based on inflated data. <a href="https://kuma-agency.moxieapp.com/public/discovery-call">Book a Free Audit →</a>`; recs.appendChild(d); anyHigh=true;
         }
+      });
+      if(blendedError > 30){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = `Your overall attribution is significantly inflated. Your real performance is likely much lower than your dashboards suggest. <a href="https://kuma-agency.moxieapp.com/public/discovery-call">Book a Free Audit →</a>`; recs.appendChild(d);
+      } else if(blendedError > 3){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = `Your overall attribution is inflated. Your real performance is likely lower than your dashboards suggest. <a href="https://kuma-agency.moxieapp.com/public/discovery-call">Book a Free Audit →</a>`; recs.appendChild(d);
       }
-
-      recsEl.innerHTML = '';
-      if(Math.abs(blendedError) > 30){
-        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'Your platforms are significantly over-reporting. You may be scaling losing campaigns. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
-        recsEl.appendChild(d);
+      if(totalGap > 10000){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = `You have a ${fmt(totalGap)} attribution blind spot. <a href="https://kuma-agency.moxieapp.com/public/discovery-call">Book a Free Audit →</a>`; recs.appendChild(d);
       }
-      if(trueRoas < 1.5){
-        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'Your ads are likely unprofitable at current spend. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
-        recsEl.appendChild(d);
-      }
-      if(overGap > 5000){
-        const d = document.createElement('div'); d.className='rec'; d.innerHTML = 'You have a serious attribution problem — book a free audit. <a href="https://kuma-agency.moxieapp.com/public/discovery-call" target="_blank">Book a free audit</a>';
-        recsEl.appendChild(d);
+      if(Object.keys(stats).length && !anyHigh && Math.abs(blendedError) <= 3){
+        const d = document.createElement('div'); d.className='rec'; d.innerHTML = `Your attribution looks healthy. Your platform data is closely aligned with Shopify.`; recs.appendChild(d);
       }
     }
 
-    [google,meta,tiktok,shopify,margin,adSpend].forEach(el=>el.addEventListener('input', compute));
-    compute();
+    // Platform checkbox handling
+    platformSelect.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+      cb.addEventListener('change', (e)=>{
+        const key = e.target.dataset.key;
+        if(e.target.checked){ if(!activePlatforms.includes(key)) activePlatforms.push(key); }
+        else { activePlatforms = activePlatforms.filter(x=>x!==key); }
+        renderInputs(); compute();
+      });
+    });
+
+    // Subscribe form POST
+    subscribeForm.addEventListener('submit', async (ev)=>{
+      ev.preventDefault();
+      emailMessage.style.display='none';
+      subscribeBtn.disabled=true; subscribeBtn.textContent='Sending...';
+      try{
+        const res = await fetch('/api/subscribe', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email: emailInput.value})});
+        if(res.ok){
+          // unlock
+          document.getElementById('calculator').style.display='block';
+          document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+          renderInputs(); compute();
+        } else {
+          const text = await res.text();
+          emailMessage.textContent = 'Something went wrong, please try again.'; emailMessage.style.display='block';
+        }
+      }catch(err){
+        emailMessage.textContent = 'Something went wrong, please try again.'; emailMessage.style.display='block';
+      } finally{ subscribeBtn.disabled=false; subscribeBtn.textContent='Get Free Access'; }
+    });
 
     // Formulas toggle
-    const toggle = document.getElementById('toggleFormulas');
-    const box = document.getElementById('formulasBox');
-    toggle.addEventListener('click', ()=>{box.style.display = box.style.display==='none'?'block':'none';toggle.textContent = box.style.display==='none'?'Show formulas':'Hide formulas'});
+    document.getElementById('toggleFormulas').addEventListener('click', ()=>{
+      const box = document.getElementById('formulasBox'); box.style.display = box.style.display==='none'?'block':'none';
+    });
+
+    // Initial render
+    renderInputs();
+    compute();
   </script>
 </body>
 </html>
